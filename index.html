@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+
+<html lang="es" class="scroll-smooth">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cómo Transformar tu CV en Invencible con IA by Rubén Sbarsky</title>
+
+    <!-- Tailwind CSS -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Icons -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <script>
+
+        tailwind.config = {
+
+            theme: {
+
+                extend: {
+
+                    colors: {
+
+                        darkbg: '#0b0f19',
+
+                        cardbg: '#161f32',
+
+                        cardhover: '#1e2d4a',
+
+                        accentBlue: '#3b82f6',
+
+                        accentCyan: '#06b6d4',
+
+                        accentPurple: '#8b5cf6',
+
+                        accentEmerald: '#10b981',
+
+                        accentRose: '#f43f5e',
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+    <style>
+
+        body {
+
+            background-color: #0b0f19;
+
+            color: #f1f5f9;
+
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+        }
+
+        .glass-card {
+
+            background: rgba(22, 31, 50, 0.85);
+
+            backdrop-filter: blur(12px);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+        }
+
+        .glow-blue {
+
+            box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.3);
+
+        }
+
+        .glow-purple {
+
+            box-shadow: 0 0 25px -5px rgba(139, 92, 246, 0.3);
+
+        }
+
+        .glow-emerald {
+
+            box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.3);
+
+        }
+
+        /* Gradient Text */
+
+        .gradient-text {
+
+            background: linear-gradient(135deg, #60a5fa 0%, #a7f3d0 50%, #c084fc 100%);
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+        }
+
+        /* Custom scrollbar */
+
+        ::-webkit-scrollbar {
+
+            width: 8px;
+
+        }
+
+        ::-webkit-scrollbar-track {
+
+            background: #0b0f19;
+
+        }
+
+        ::-webkit-scrollbar-thumb {
+
+            background: #1e293b;
+
+            border-radius: 4px;
+
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+
+            background: #3b82f6;
+
+        }
+
+    </style>
+
+</head>
+
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-blue-500 selection:text-white">
+
+
+
+    <!-- Toast Notification -->
+
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 bg-emerald-600 text-white px-5 py-3 rounded-xl shadow-2xl font-semibold">
+
+        <i class="fa-solid fa-circle-check text-xl"></i>
+
+        <span id="toast-message">¡Prompt copiado con éxito!</span>
+
+    </div>
+
+
+
+    <!-- Header Navigation -->
+
+    <header class="sticky top-0 z-40 glass-card border-b border-slate-800/80 px-4 lg:px-8 py-3 backdrop-blur-md">
+
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+            <div class="flex items-center gap-3">
+
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+
+                    <i class="fa-solid fa-brain"></i>
+
+                </div>
+
+                <div>
+
+                    <h1 class="font-extrabold text-sm md:text-base text-white leading-tight">
+
+                        CV Invencible con IA <span class="text-blue-400 block text-xs font-normal">by Rubén Sbarsky</span>
+
+                    </h1>
+
+                </div>
+
+            </div>
+
+            
+
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+
+                <a href="#cap1" class="hover:text-blue-400 transition-colors">1. Diagnóstico</a>
+
+                <a href="#cap2" class="hover:text-blue-400 transition-colors">2. Fórmula Google</a>
+
+                <a href="#cap3" class="hover:text-blue-400 transition-colors">3. Filtros ATS</a>
+
+                <a href="#cap4" class="hover:text-blue-400 transition-colors">4. Entrevista</a>
+
+                <a href="#prompts-vault" class="hover:text-blue-400 transition-colors">Prompts</a>
+
+                <a href="#ejercicios" class="hover:text-blue-400 transition-colors">Ejercicios</a>
+
+            </nav>
+
+
+
+            <a href="#prompts-vault" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-md flex items-center gap-2">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <span>4 Prompts Exactos</span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- Hero Section -->
+
+    <section class="relative py-12 md:py-20 px-4 max-w-7xl mx-auto text-center overflow-hidden">
+
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-600/15 blur-3xl rounded-full pointer-events-none"></div>
+
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700 text-blue-400 text-xs font-semibold mb-6">
+
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            <span>Tutorial Interactivo & Infografía Guiada</span>
+
+        </div>
+
+        
+
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight max-w-5xl mx-auto mb-4">
+
+            Cómo Transformar tu CV en <span class="gradient-text">Invencible</span> con IA
+
+        </h1>
+
+        <p class="text-lg md:text-xl font-bold text-blue-400 mb-8">
+
+            by Rubén Sbarsky
+
+        </p>
+
+        
+
+        <p class="text-slate-300 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+
+            Aprende a dominar las herramientas de Inteligencia Artificial (<strong class="text-blue-300">ChatGPT, Google Gemini, Claude</strong>) para adaptar tu currículum exactamente a lo que busca la empresa, vencer los filtros automáticos y destacar entre la competencia.
+
+        </p>
+
+
+
+        <!-- KPI Summary Stats Cards -->
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+
+            <div class="glass-card p-4 rounded-2xl border-l-4 border-blue-500">
+
+                <div class="text-2xl font-black text-blue-400">0 - 100</div>
+
+                <div class="text-xs text-slate-400 font-medium">Nota Compatibilidad</div>
+
+                <div class="text-[11px] text-slate-500 mt-1">Diagnóstico Inicial</div>
+
+            </div>
+
+            <div class="glass-card p-4 rounded-2xl border-l-4 border-purple-500">
+
+                <div class="text-2xl font-black text-purple-400">X - Y - Z</div>
+
+                <div class="text-xs text-slate-400 font-medium">Fórmula de Google</div>
+
+                <div class="text-[11px] text-slate-500 mt-1">Logro + Métrica + Acción</div>
+
+            </div>
+
+            <div class="glass-card p-4 rounded-2xl border-l-4 border-cyan-500">
+
+                <div class="text-2xl font-black text-cyan-400">Bypass ATS</div>
+
+                <div class="text-xs text-slate-400 font-medium">Filtro de Robots</div>
+
+                <div class="text-[11px] text-slate-500 mt-1">Sistemas de Seguimiento</div>
+
+            </div>
+
+            <div class="glass-card p-4 rounded-2xl border-l-4 border-emerald-500">
+
+                <div class="text-2xl font-black text-emerald-400">4 Prompts</div>
+
+                <div class="text-xs text-slate-400 font-medium">Comandos Listos</div>
+
+                <div class="text-[11px] text-slate-500 mt-1">Copiado en 1-Clic</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Why it matters / Real Situations -->
+
+    <section class="py-10 px-4 max-w-7xl mx-auto">
+
+        <div class="glass-card p-6 md:p-8 rounded-3xl border border-slate-700/60 relative overflow-hidden">
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+
+                <div class="space-y-3">
+
+                    <span class="text-xs font-bold uppercase tracking-wider text-blue-400">¿Por qué es vital?</span>
+
+                    <h2 class="text-2xl font-bold text-white">Recupera el Control de tus Postulaciones</h2>
+
+                    <p class="text-sm text-slate-300 leading-relaxed">
+
+                        Enviar el mismo currículum genérico te convierte en "uno más del montón". Optimizarlo con IA equivale a saltarte la fila, tomar mejores decisiones y ahorrar decenas de horas de trabajo.
+
+                    </p>
+
+                </div>
+
+                
+
+                <div class="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                    <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800">
+
+                        <div class="w-10 h-10 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center text-lg mb-3">
+
+                            <i class="fa-solid fa-circle-xmark"></i>
+
+                        </div>
+
+                        <h3 class="font-bold text-white text-sm mb-1">Sin Optimizar</h3>
+
+                        <p class="text-xs text-slate-400">CV estático e idéntico para todas las vacantes. Ignora las palabras clave de la oferta y queda atrapado en filtros informáticos.</p>
+
+                    </div>
+
+
+
+                    <div class="bg-slate-900/80 p-5 rounded-2xl border border-blue-500/30">
+
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg mb-3">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                        </div>
+
+                        <h3 class="font-bold text-white text-sm mb-1">Con IA Método 4 Prompts</h3>
+
+                        <p class="text-xs text-slate-400">CV adaptado quirúrgicamente a la oferta específica. Integra logros cuantificables y pasa directo a la mesa de entrevistas.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MAIN ROADMAP - CHAPTERS -->
+
+    <main class="py-10 px-4 max-w-7xl mx-auto space-y-16">
+
+
+
+        <!-- CHAPTER 1 -->
+
+        <section id="cap1" class="scroll-mt-24">
+
+            <div class="flex items-center gap-3 mb-6">
+
+                <span class="w-10 h-10 rounded-2xl bg-blue-600 text-white font-black flex items-center justify-center text-lg shadow-lg">1</span>
+
+                <div>
+
+                    <h2 class="text-2xl font-black text-white">Capítulo 1: Diagnóstico Inicial y Palabras Clave</h2>
+
+                    <p class="text-xs text-slate-400">Descubre las debilidades de tu CV comparándolo con una oferta real</p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+                <!-- Step details -->
+
+                <div class="lg:col-span-7 space-y-4">
+
+                    <div class="glass-card p-6 rounded-2xl space-y-4">
+
+                        <div class="flex items-start justify-between">
+
+                            <div class="flex items-center gap-3">
+
+                                <div class="p-3 bg-blue-500/10 text-blue-400 rounded-xl">
+
+                                    <i class="fa-solid fa-microchip text-xl"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3 class="font-bold text-white">Paso 1: Preparar Herramientas</h3>
+
+                                    <p class="text-xs text-slate-400">Abre ChatGPT, Google Gemini o Claude y ten a mano tu CV + Oferta de trabajo.</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="glass-card p-6 rounded-2xl space-y-4 border-l-4 border-blue-500">
+
+                        <div class="flex items-center justify-between">
+
+                            <h3 class="font-bold text-white text-lg">Paso 2: Subir CV y Lanzar Prompt 1</h3>
+
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300">Rol: Reclutador Senior</span>
+
+                        </div>
+
+                        
+
+                        <p class="text-xs text-slate-300 leading-relaxed">
+
+                            Subes tu archivo de CV y pegas la oferta junto a esta instrucción para obtener tu nota sobre 100 e identificar las 5 palabras clave faltantes.
+
+                        </p>
+
+
+
+                        <!-- PROMPT BOX 1 -->
+
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
+
+                            <div class="flex items-center justify-between text-xs text-slate-400">
+
+                                <span class="font-mono text-blue-400"><i class="fa-solid fa-terminal mr-1"></i> PROMPT 1</span>
+
+                                <button onclick="copyPrompt('prompt1', this)" class="bg-blue-600/80 hover:bg-blue-600 text-white px-3 py-1 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
+
+                                    <i class="fa-regular fa-copy"></i>
+
+                                    <span>Copiar Prompt</span>
+
+                                </button>
+
+                            </div>
+
+                            <p id="prompt1" class="font-mono text-xs text-slate-200 bg-slate-900/60 p-3 rounded-lg border border-slate-800/80 leading-relaxed">
+
+"Actúa como un reclutador senior analiza mi currículum en función de esta descripción del puesto dame una puntuación de compatibilidad sobre 100 e identifícame las cinco palabras clave que me faltan"
+
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="p-3 bg-amber-500/10 border border-amber-500/30 rounded-xl flex items-start gap-3">
+
+                            <i class="fa-solid fa-triangle-exclamation text-amber-400 mt-0.5"></i>
+
+                            <div class="text-xs text-amber-200/90">
+
+                                <strong class="text-amber-300">Error frecuente:</strong> Enviar el CV sin incluir las palabras exactas que busca la empresa (ej: si la oferta exige <em>"liderazgo"</em> y tu CV no menciona esa palabra, te descartarán).
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Analogy & Examples Card -->
+
+                <div class="lg:col-span-5 glass-card p-6 rounded-2xl flex flex-col justify-between space-y-6">
+
+                    <div>
+
+                        <div class="flex items-center gap-2 text-cyan-400 font-bold text-sm mb-3">
+
+                            <i class="fa-solid fa-car-wrench"></i>
+
+                            <span>Analogía del Mecánico</span>
+
+                        </div>
+
+                        <p class="text-xs text-slate-300 leading-relaxed bg-slate-900/80 p-4 rounded-xl border border-slate-800 mb-6">
+
+                            Imagina que tu currículum es un <strong>coche de carreras</strong> y la IA es el <strong>mecánico experto</strong>. En este paso, el mecánico conecta el coche a la máquina de diagnóstico para decirte qué piezas (palabras clave) te faltan antes de salir a competir.
+
+                        </p>
+
+
+
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Ejemplo Comparativo</h4>
+
+                        <div class="space-y-3">
+
+                            <div class="p-3 bg-rose-950/40 border border-rose-800/50 rounded-xl">
+
+                                <span class="text-[10px] font-bold text-rose-400 uppercase block mb-1">❌ Ejemplo Incorrecto</span>
+
+                                <p class="text-xs text-slate-300">"Mejora mi CV"</p>
+
+                                <span class="text-[11px] text-slate-400 mt-1 block">Demasiado vago, no le da rol ni objetivo claro a la IA.</span>
+
+                            </div>
+
+
+
+                            <div class="p-3 bg-emerald-950/40 border border-emerald-800/50 rounded-xl">
+
+                                <span class="text-[10px] font-bold text-emerald-400 uppercase block mb-1">✓ Ejemplo Correcto</span>
+
+                                <p class="text-xs text-slate-300">Usar el Prompt 1 con rol de reclutador senior, nota 0-100 y 5 palabras clave.</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="p-3 bg-blue-900/30 border border-blue-500/20 rounded-xl text-center text-xs text-blue-300 font-medium">
+
+                        <i class="fa-solid fa-lightbulb mr-1"></i> Resumen: Descubres la nota exacta y las 5 palabras clave que faltan.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CHAPTER 2 -->
+
+        <section id="cap2" class="scroll-mt-24">
+
+            <div class="flex items-center gap-3 mb-6">
+
+                <span class="w-10 h-10 rounded-2xl bg-purple-600 text-white font-black flex items-center justify-center text-lg shadow-lg">2</span>
+
+                <div>
+
+                    <h2 class="text-2xl font-black text-white">Capítulo 2: La Fórmula de Google (X, Y, Z)</h2>
+
+                    <p class="text-xs text-slate-400">Reescribe tu experiencia convirtiendo tareas comunes en logros profesionales cuantificables</p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Google Formula Interactive Showcase -->
+
+            <div class="glass-card p-6 md:p-8 rounded-3xl mb-6 border border-purple-500/30 glow-purple">
+
+                <div class="text-center max-w-xl mx-auto mb-8">
+
+                    <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Fórmula Creada por Google</span>
+
+                    <h3 class="text-2xl font-black text-white mt-1">"Logré [X], medido por [Y], haciendo [Z]"</h3>
+
+                </div>
+
+
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center mb-8">
+
+                    <div class="bg-blue-950/50 p-4 rounded-2xl border border-blue-500/40">
+
+                        <div class="w-8 h-8 rounded-full bg-blue-500 text-white font-black text-sm flex items-center justify-center mx-auto mb-2">X</div>
+
+                        <h4 class="font-bold text-blue-300 text-sm">El Logro / Resultado</h4>
+
+                        <p class="text-xs text-slate-400 mt-1">¿Qué alcanzaste o mejoraste?</p>
+
+                    </div>
+
+
+
+                    <div class="bg-emerald-950/50 p-4 rounded-2xl border border-emerald-500/40">
+
+                        <div class="w-8 h-8 rounded-full bg-emerald-500 text-white font-black text-sm flex items-center justify-center mx-auto mb-2">Y</div>
+
+                        <h4 class="font-bold text-emerald-300 text-sm">La Métrica Medible</h4>
+
+                        <p class="text-xs text-slate-400 mt-1">Porcentaje, tiempo, cantidad o dinero</p>
+
+                    </div>
+
+
+
+                    <div class="bg-purple-950/50 p-4 rounded-2xl border border-purple-500/40">
+
+                        <div class="w-8 h-8 rounded-full bg-purple-500 text-white font-black text-sm flex items-center justify-center mx-auto mb-2">Z</div>
+
+                        <h4 class="font-bold text-purple-300 text-sm">La Acción / Método</h4>
+
+                        <p class="text-xs text-slate-400 mt-1">¿Cómo lo hiciste concretamente?</p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Interactive Examples Switcher -->
+
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
+
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4 border-b border-slate-800 pb-4">
+
+                        <span class="text-xs font-bold text-slate-400 uppercase">Demostración Interactiva XYZ</span>
+
+                        <div class="flex gap-2">
+
+                            <button onclick="switchXYZ('cotidiano')" id="btn-cotidiano" class="xyz-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-purple-600 text-white transition-all">Situación Cotidiana</button>
+
+                            <button onclick="switchXYZ('ventas')" id="btn-ventas" class="xyz-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white transition-all">Caso Ventas</button>
+
+                            <button onclick="switchXYZ('camarero')" id="btn-camarero" class="xyz-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white transition-all">Caso Camarero</button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div id="xyz-content-cotidiano" class="space-y-3">
+
+                        <div class="text-xs text-rose-400"><strong class="uppercase text-[10px] block">Redacción Normal:</strong> "Hice la cena para la fiesta."</div>
+
+                        <div class="p-4 bg-slate-900 rounded-xl border border-purple-500/30 text-xs text-slate-200 leading-relaxed">
+
+                            <strong class="uppercase text-[10px] text-purple-400 block mb-1">Con Fórmula XYZ de Google:</strong>
+
+                            "Logré <span class="text-blue-400 font-bold">alimentar a todos los invitados (X)</span>, preparando <span class="text-emerald-400 font-bold">20 platos en menos de 2 horas (Y)</span>, <span class="text-purple-400 font-bold">cocinando recetas al horno para ahorrar tiempo (Z)</span>."
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div id="xyz-content-ventas" class="space-y-3 hidden">
+
+                        <div class="text-xs text-rose-400"><strong class="uppercase text-[10px] block">Redacción Incorrecta:</strong> "Era el encargado de las ventas."</div>
+
+                        <div class="p-4 bg-slate-900 rounded-xl border border-purple-500/30 text-xs text-slate-200 leading-relaxed">
+
+                            <strong class="uppercase text-[10px] text-purple-400 block mb-1">Con Fórmula XYZ de Google:</strong>
+
+                            "Logré <span class="text-blue-400 font-bold">aumentar las ventas (X)</span> en un <span class="text-emerald-400 font-bold">20% mensual (Y)</span> <span class="text-purple-400 font-bold">implementando un nuevo sistema de llamadas a clientes (Z)</span>."
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div id="xyz-content-camarero" class="space-y-3 hidden">
+
+                        <div class="text-xs text-rose-400"><strong class="uppercase text-[10px] block">Redacción Normal:</strong> "Trabajé de camarero y serví mesas."</div>
+
+                        <div class="p-4 bg-slate-900 rounded-xl border border-purple-500/30 text-xs text-slate-200 leading-relaxed">
+
+                            <strong class="uppercase text-[10px] text-purple-400 block mb-1">Con Fórmula XYZ de Google:</strong>
+
+                            "Logré <span class="text-blue-400 font-bold">aumentar las propinas del local (X)</span> en un <span class="text-emerald-400 font-bold">15% mensual (Y)</span> <span class="text-purple-400 font-bold">implementando un trato personalizado y recomendaciones de postres (Z)</span>."
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROMPT BOX 2 -->
+
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-purple-500 space-y-4">
+
+                <div class="flex items-center justify-between">
+
+                    <h3 class="font-bold text-white text-lg">Paso 3: Prompt para Reescribir tu Experiencia laboral</h3>
+
+                    <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300">Prompt 2</span>
+
+                </div>
+
+
+
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
+
+                    <div class="flex items-center justify-between text-xs text-slate-400">
+
+                        <span class="font-mono text-purple-400"><i class="fa-solid fa-terminal mr-1"></i> PROMPT 2</span>
+
+                        <button onclick="copyPrompt('prompt2', this)" class="bg-purple-600/80 hover:bg-purple-600 text-white px-3 py-1 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
+
+                            <i class="fa-regular fa-copy"></i>
+
+                            <span>Copiar Prompt</span>
+
+                        </button>
+
+                    </div>
+
+                    <p id="prompt2" class="font-mono text-xs text-slate-200 bg-slate-900/60 p-3 rounded-lg border border-slate-800/80 leading-relaxed">
+
+"Reescribe mi sección de experiencia para incluir esas palabras clave de forma natural y utiliza la fórmula X y Z de Google logré con X medido por I y haciendo con Z"
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="p-3 bg-emerald-950/30 border border-emerald-500/30 rounded-xl flex items-center gap-3">
+
+                    <i class="fa-solid fa-user-shield text-emerald-400"></i>
+
+                    <p class="text-xs text-emerald-200">
+
+                        <strong class="text-emerald-300">Consejo de experto:</strong> Nunca mientas. Revisa siempre que lo que genera la IA sea verdadero y coincida con tu trayectoria real.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CHAPTER 3 -->
+
+        <section id="cap3" class="scroll-mt-24">
+
+            <div class="flex items-center gap-3 mb-6">
+
+                <span class="w-10 h-10 rounded-2xl bg-cyan-600 text-white font-black flex items-center justify-center text-lg shadow-lg">3</span>
+
+                <div>
+
+                    <h2 class="text-2xl font-black text-white">Capítulo 3: Vencer a los Robots (Sistemas ATS)</h2>
+
+                    <p class="text-xs text-slate-400">Garantiza que los programas de filtrado automático lean tu CV sin errores</p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
+
+                <!-- ATS Explanation -->
+
+                <div class="lg:col-span-5 glass-card p-6 rounded-2xl space-y-4 border-l-4 border-cyan-500">
+
+                    <div class="flex items-center gap-3">
+
+                        <div class="p-3 bg-cyan-500/10 text-cyan-400 rounded-xl">
+
+                            <i class="fa-solid fa-robot text-xl"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3 class="font-bold text-white">¿Qué es un Filtro ATS?</h3>
+
+                            <p class="text-xs text-slate-400">Applicant Tracking System</p>
+
+                        </div>
+
+                    </div>
+
+                    
+
+                    <p class="text-xs text-slate-300 leading-relaxed">
+
+                        Es un software automático usado por las empresas para escanear y descartar CVs antes de que un reclutador humano los vea. Mide la <strong>puntuación de elegibilidad</strong>.
+
+                    </p>
+
+
+
+                    <div class="p-3 bg-rose-500/10 border border-rose-500/30 rounded-xl text-xs text-rose-300 space-y-1">
+
+                        <strong class="text-rose-400 block"><i class="fa-solid fa-ban mr-1"></i> Error Común:</strong>
+
+                        <span>Diseños vistosos con columnas múltiples, gráficos o iconos raros. Los robots no pueden leer imágenes ni gráficos, solo texto simple.</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Interactive Comparative Table Card -->
+
+                <div class="lg:col-span-7 glass-card p-6 rounded-2xl space-y-4">
+
+                    <h3 class="font-bold text-white text-base flex items-center justify-between">
+
+                        <span>Tabla Comparativa: Humano vs. Robot ATS</span>
+
+                        <span class="text-xs font-normal text-cyan-400">Vista rápida</span>
+
+                    </h3>
+
+
+
+                    <div class="overflow-x-auto">
+
+                        <table class="w-full text-xs text-left">
+
+                            <thead class="bg-slate-900 text-slate-300 font-bold uppercase text-[10px]">
+
+                                <tr>
+
+                                    <th class="p-3 rounded-l-lg">Característica</th>
+
+                                    <th class="p-3 text-emerald-400">Humano Reclutador</th>
+
+                                    <th class="p-3 text-cyan-400 rounded-r-lg">Robot ATS</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody class="divide-y divide-slate-800 text-slate-300">
+
+                                <tr>
+
+                                    <td class="p-3 font-semibold text-white">Diseño Visual</td>
+
+                                    <td class="p-3 text-slate-400">Colores, fotos, columnas atractivas.</td>
+
+                                    <td class="p-3 text-cyan-300 font-medium">Texto plano, 1 sola columna, simple.</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="p-3 font-semibold text-white">Palabras Usadas</td>
+
+                                    <td class="p-3 text-slate-400">Lenguaje variado y fluido.</td>
+
+                                    <td class="p-3 text-cyan-300 font-medium">Exactamente las palabras clave de la oferta.</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="p-3 font-semibold text-white">Modo de Lectura</td>
+
+                                    <td class="p-3 text-slate-400">Se aburre rápido, lee por encima.</td>
+
+                                    <td class="p-3 text-cyan-300 font-medium">Escanea cada letra buscando coincidencias.</td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROMPT BOX 3 -->
+
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-cyan-500 space-y-4">
+
+                <div class="flex items-center justify-between">
+
+                    <h3 class="font-bold text-white text-lg">Paso 4: Evaluar tu CV con el Simulador ATS</h3>
+
+                    <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300">Prompt 3</span>
+
+                </div>
+
+
+
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
+
+                    <div class="flex items-center justify-between text-xs text-slate-400">
+
+                        <span class="font-mono text-cyan-400"><i class="fa-solid fa-terminal mr-1"></i> PROMPT 3</span>
+
+                        <button onclick="copyPrompt('prompt3', this)" class="bg-cyan-600/80 hover:bg-cyan-600 text-white px-3 py-1 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
+
+                            <i class="fa-regular fa-copy"></i>
+
+                            <span>Copiar Prompt</span>
+
+                        </button>
+
+                    </div>
+
+                    <p id="prompt3" class="font-mono text-xs text-slate-200 bg-slate-900/60 p-3 rounded-lg border border-slate-800/80 leading-relaxed">
+
+"Ahora actúa como el filtro de un sistema de seguimiento de candidatos ATS analiza mi nuevo currículum y dime qué secciones le costaría leer a un robot"
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CHAPTER 4 -->
+
+        <section id="cap4" class="scroll-mt-24">
+
+            <div class="flex items-center gap-3 mb-6">
+
+                <span class="w-10 h-10 rounded-2xl bg-emerald-600 text-white font-black flex items-center justify-center text-lg shadow-lg">4</span>
+
+                <div>
+
+                    <h2 class="text-2xl font-black text-white">Capítulo 4: El Regalo Extra - Preparar la Entrevista</h2>
+
+                    <p class="text-xs text-slate-400">Entrena antes del gran día con un simulador personalizado a tu trayectoria</p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+                <div class="lg:col-span-7 glass-card p-6 rounded-2xl border-l-4 border-emerald-500 space-y-4">
+
+                    <div class="flex items-center justify-between">
+
+                        <h3 class="font-bold text-white text-lg">Paso 5: Simulador de Entrevista Técnica</h3>
+
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300">Prompt 4</span>
+
+                    </div>
+
+
+
+                    <p class="text-xs text-slate-300 leading-relaxed">
+
+                        Este comando convierte a la IA en el responsable de contratación. Te genera las 3 preguntas técnicas más difíciles y te da las respuestas perfectas basadas en tu propia experiencia.
+
+                    </p>
+
+
+
+                    <!-- PROMPT BOX 4 -->
+
+                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
+
+                        <div class="flex items-center justify-between text-xs text-slate-400">
+
+                            <span class="font-mono text-emerald-400"><i class="fa-solid fa-terminal mr-1"></i> PROMPT 4</span>
+
+                            <button onclick="copyPrompt('prompt4', this)" class="bg-emerald-600/80 hover:bg-emerald-600 text-white px-3 py-1 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5">
+
+                                <i class="fa-regular fa-copy"></i>
+
+                                <span>Copiar Prompt</span>
+
+                            </button>
+
+                        </div>
+
+                        <p id="prompt4" class="font-mono text-xs text-slate-200 bg-slate-900/60 p-3 rounded-lg border border-slate-800/80 leading-relaxed">
+
+"Actúa como el responsable de contratación para ese puesto hazme las tres preguntas técnicas más difíciles y luego dame la respuesta perfecta para cada una basándote en mi experiencia"
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="p-3 bg-emerald-950/40 border border-emerald-500/30 rounded-xl flex items-center gap-3 text-xs text-emerald-200">
+
+                        <i class="fa-solid fa-comments text-emerald-400 text-lg"></i>
+
+                        <span><strong>Buena Práctica:</strong> Ensayar las respuestas devueltas por la IA en voz alta frente a un espejo antes de la entrevista.</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Mirror Analogy -->
+
+                <div class="lg:col-span-5 glass-card p-6 rounded-2xl flex flex-col justify-between space-y-4">
+
+                    <div>
+
+                        <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm mb-3">
+
+                            <i class="fa-solid fa-graduation-cap"></i>
+
+                            <span>Analogía del Examen Previsto</span>
+
+                        </div>
+
+                        <p class="text-xs text-slate-300 leading-relaxed bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+
+                            Es exactamente igual que tener las <strong>preguntas del examen el día anterior</strong> junto con las soluciones resueltas. Te da seguridad total y elimina los nervios improvisados.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="p-4 bg-slate-900/90 rounded-2xl border border-slate-800 text-center space-y-2">
+
+                        <div class="text-2xl text-emerald-400 font-black">100%</div>
+
+                        <div class="text-xs text-slate-300 font-medium">Control Total de tus Respuestas</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PROMPTS VAULT SECTION -->
+
+        <section id="prompts-vault" class="scroll-mt-24 py-6">
+
+            <div class="glass-card p-6 md:p-8 rounded-3xl border border-blue-500/30 glow-blue">
+
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+
+                    <div>
+
+                        <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Bóveda de Recursos</span>
+
+                        <h2 class="text-2xl font-black text-white">Los 4 Prompts Maestros para Copiar en Orden</h2>
+
+                    </div>
+
+                    <button onclick="copyAllPrompts()" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all shadow-lg flex items-center gap-2 self-start">
+
+                        <i class="fa-solid fa-copy"></i>
+
+                        <span>Copiar los 4 Prompts Juntos</span>
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                    <!-- Card 1 -->
+
+                    <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+
+                        <div class="flex items-center justify-between">
+
+                            <span class="text-xs font-bold text-blue-400">1. Diagnóstico Inicial</span>
+
+                            <button onclick="copyPrompt('prompt1', this)" class="text-xs text-slate-400 hover:text-white"><i class="fa-regular fa-copy mr-1"></i>Copiar</button>
+
+                        </div>
+
+                        <p class="text-xs font-mono text-slate-300 bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
+
+                            "Actúa como un reclutador senior analiza mi currículum en función de esta descripción del puesto dame una puntuación de compatibilidad sobre 100 e identifícame las cinco palabras clave que me faltan"
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- Card 2 -->
+
+                    <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+
+                        <div class="flex items-center justify-between">
+
+                            <span class="text-xs font-bold text-purple-400">2. Fórmula XYZ Google</span>
+
+                            <button onclick="copyPrompt('prompt2', this)" class="text-xs text-slate-400 hover:text-white"><i class="fa-regular fa-copy mr-1"></i>Copiar</button>
+
+                        </div>
+
+                        <p class="text-xs font-mono text-slate-300 bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
+
+                            "Reescribe mi sección de experiencia para incluir esas palabras clave de forma natural y utiliza la fórmula X y Z de Google logré con X medido por I y haciendo con Z"
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- Card 3 -->
+
+                    <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+
+                        <div class="flex items-center justify-between">
+
+                            <span class="text-xs font-bold text-cyan-400">3. Evaluación ATS Robot</span>
+
+                            <button onclick="copyPrompt('prompt3', this)" class="text-xs text-slate-400 hover:text-white"><i class="fa-regular fa-copy mr-1"></i>Copiar</button>
+
+                        </div>
+
+                        <p class="text-xs font-mono text-slate-300 bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
+
+                            "Ahora actúa como el filtro de un sistema de seguimiento de candidatos ATS analiza mi nuevo currículum y dime qué secciones le costaría leer a un robot"
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- Card 4 -->
+
+                    <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+
+                        <div class="flex items-center justify-between">
+
+                            <span class="text-xs font-bold text-emerald-400">4. Ensayo de Entrevista</span>
+
+                            <button onclick="copyPrompt('prompt4', this)" class="text-xs text-slate-400 hover:text-white"><i class="fa-regular fa-copy mr-1"></i>Copiar</button>
+
+                        </div>
+
+                        <p class="text-xs font-mono text-slate-300 bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
+
+                            "Actúa como el responsable de contratación para ese puesto hazme las tres preguntas técnicas más difíciles y luego dame la respuesta perfecta para cada una basándote en mi experiencia"
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ERRORS & CHECKLIST -->
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div class="glass-card p-6 rounded-3xl border-l-4 border-rose-500 space-y-4">
+
+                <h3 class="text-lg font-bold text-white flex items-center gap-2">
+
+                    <i class="fa-solid fa-triangle-exclamation text-rose-500"></i>
+
+                    <span>4 Errores Fatales que NUNCA Debes Cometer</span>
+
+                </h3>
+
+                <ul class="space-y-3 text-xs text-slate-300">
+
+                    <li class="flex items-start gap-2.5 bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
+
+                        <span class="text-rose-500 font-bold">❌</span>
+
+                        <span><strong>Enviar el mismo CV para todas las ofertas:</strong> Quedarás descartado por falta de coincidencia en palabras clave.</span>
+
+                    </li>
+
+                    <li class="flex items-start gap-2.5 bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
+
+                        <span class="text-rose-500 font-bold">❌</span>
+
+                        <span><strong>Ignorar la Fórmula XYZ:</strong> Escribir tareas vagas sin métricas, números ni resultados concretos.</span>
+
+                    </li>
+
+                    <li class="flex items-start gap-2.5 bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
+
+                        <span class="text-rose-500 font-bold">❌</span>
+
+                        <span><strong>Diseños muy complejos con gráficos:</strong> Los sistemas automáticos (ATS) no pueden leer imágenes ni tablas.</span>
+
+                    </li>
+
+                    <li class="flex items-start gap-2.5 bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
+
+                        <span class="text-rose-500 font-bold">❌</span>
+
+                        <span><strong>Ir a la entrevista sin ensayar:</strong> No practicar previamente las 3 preguntas técnicas más difíciles.</span>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- Best Practices -->
+
+            <div class="glass-card p-6 rounded-3xl border-l-4 border-emerald-500 space-y-4">
+
+                <h3 class="text-lg font-bold text-white flex items-center gap-2">
+
+                    <i class="fa-solid fa-star text-emerald-400"></i>
+
+                    <span>Recomendaciones para Seguir Aprendiendo</span>
+
+                </h3>
+
+                <div class="space-y-3 text-xs text-slate-300">
+
+                    <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-800 flex items-start gap-3">
+
+                        <div class="p-2 bg-emerald-500/20 text-emerald-400 rounded-lg"><i class="fa-solid fa-folder-open"></i></div>
+
+                        <div>
+
+                            <strong class="text-white block mb-0.5">Guarda los Prompts en un Documento Local</strong>
+
+                            <p class="text-slate-400">Mantén un archivo de texto con las 4 instrucciones en tu ordenador para pegarlas rápidamente cada vez que postules.</p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-800 flex items-start gap-3">
+
+                        <div class="p-2 bg-emerald-500/20 text-emerald-400 rounded-lg"><i class="fa-solid fa-arrows-rotate"></i></div>
+
+                        <div>
+
+                            <strong class="text-white block mb-0.5">Aplica el Método en Secuencia</strong>
+
+                            <p class="text-slate-400">No te saltes ningún paso. Primero diagnostica, luego reescribe, después evalúa para ATS y finalmente ensaya la entrevista.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- INTERACTIVE PRACTICE EXERCISES -->
+
+        <section id="ejercicios" class="scroll-mt-24 space-y-6">
+
+            <div class="flex items-center justify-between">
+
+                <div>
+
+                    <h2 class="text-2xl font-black text-white">Ejercicios Prácticos e Interactivos</h2>
+
+                    <p class="text-xs text-slate-400">Pon a prueba tu comprensión y despliega la solución explicada</p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Exercise 1 -->
+
+                <div class="glass-card p-6 rounded-2xl space-y-4">
+
+                    <div class="flex items-center justify-between">
+
+                        <span class="text-xs font-bold text-purple-400 uppercase">Ejercicio 1</span>
+
+                        <span class="text-[10px] bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded-full">Fórmula XYZ</span>
+
+                    </div>
+
+                    <h3 class="font-bold text-white text-sm">
+
+                        Tienes que poner en tu CV que trabajaste de camarero y mejoraste las propinas. Aplica la fórmula XYZ de Google.
+
+                    </h3>
+
+                    <button onclick="toggleSolution('sol-1')" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 py-2 rounded-xl text-xs font-semibold transition-all flex items-center justify-center gap-2">
+
+                        <span>Ver Solución Explicada</span>
+
+                        <i id="sol-1-icon" class="fa-solid fa-chevron-down text-xs"></i>
+
+                    </button>
+
+                    <div id="sol-1" class="hidden p-4 bg-slate-950 rounded-xl border border-purple-500/30 text-xs text-slate-300 leading-relaxed">
+
+                        <strong class="text-emerald-400 block mb-1">✓ Solución Correcta:</strong>
+
+                        "Logré <span class="text-blue-400 font-bold">aumentar las propinas del local (X)</span> en un <span class="text-emerald-400 font-bold">15% mensual (Y)</span> <span class="text-purple-400 font-bold">implementando un trato personalizado y recomendaciones de postres a cada cliente (Z)</span>."
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Exercise 2 -->
+
+                <div class="glass-card p-6 rounded-2xl space-y-4">
+
+                    <div class="flex items-center justify-between">
+
+                        <span class="text-xs font-bold text-blue-400 uppercase">Ejercicio 2</span>
+
+                        <span class="text-[10px] bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded-full">Palabras Clave</span>
+
+                    </div>
+
+                    <h3 class="font-bold text-white text-sm">
+
+                        Vas a aplicar a un puesto que pide "Dominio de Excel avanzado y Trabajo en equipo". ¿Cuáles son tus palabras clave directas?
+
+                    </h3>
+
+                    <button onclick="toggleSolution('sol-2')" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 py-2 rounded-xl text-xs font-semibold transition-all flex items-center justify-center gap-2">
+
+                        <span>Ver Solución Explicada</span>
+
+                        <i id="sol-2-icon" class="fa-solid fa-chevron-down text-xs"></i>
+
+                    </button>
+
+                    <div id="sol-2" class="hidden p-4 bg-slate-950 rounded-xl border border-blue-500/30 text-xs text-slate-300 leading-relaxed">
+
+                        <strong class="text-emerald-400 block mb-1">✓ Solución Correcta:</strong>
+
+                        Las palabras clave directas son <strong class="text-blue-300">"Excel avanzado"</strong> y <strong class="text-blue-300">"Trabajo en equipo"</strong>. Debes asegurarte de que esas palabras exactas aparezcan redactadas en tu currículum antes de enviarlo.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- INTERACTIVE GLOSSARY -->
+
+        <section class="glass-card p-6 md:p-8 rounded-3xl border border-slate-800 space-y-6">
+
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+
+                <div>
+
+                    <h2 class="text-2xl font-black text-white">Glosario de Términos Técnicos</h2>
+
+                    <p class="text-xs text-slate-400">Diccionario rápido de conceptos para dominar el proceso</p>
+
+                </div>
+
+                <input type="text" id="glossary-search" onkeyup="filterGlossary()" placeholder="Buscar término..." class="bg-slate-950 border border-slate-800 text-xs text-white px-4 py-2 rounded-xl focus:outline-none focus:border-blue-500 w-full sm:w-64">
+
+            </div>
+
+
+
+            <div id="glossary-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                <div class="glossary-card bg-slate-950 p-4 rounded-xl border border-slate-800/80 space-y-1">
+
+                    <span class="text-xs font-bold text-blue-400 block">ATS (Applicant Tracking System)</span>
+
+                    <p class="text-xs text-slate-400">Sistema informático (un robot) utilizado por las empresas para filtrar currículums automáticamente antes de la lectura humana.</p>
+
+                </div>
+
+
+
+                <div class="glossary-card bg-slate-950 p-4 rounded-xl border border-slate-800/80 space-y-1">
+
+                    <span class="text-xs font-bold text-purple-400 block">Compatibilidad</span>
+
+                    <p class="text-xs text-slate-400">Puntuación sobre 100 que indica qué tanto se adapta tu currículum a las necesidades específicas de la oferta de trabajo.</p>
+
+                </div>
+
+
+
+                <div class="glossary-card bg-slate-950 p-4 rounded-xl border border-slate-800/80 space-y-1">
+
+                    <span class="text-xs font-bold text-cyan-400 block">Elegibilidad</span>
+
+                    <p class="text-xs text-slate-400">Calificación que indica si la estructura de tu CV es fácil de interpretar y leer sin errores por un filtro automático ATS.</p>
+
+                </div>
+
+
+
+                <div class="glossary-card bg-slate-950 p-4 rounded-xl border border-slate-800/80 space-y-1">
+
+                    <span class="text-xs font-bold text-emerald-400 block">Prompt</span>
+
+                    <p class="text-xs text-slate-400">Orden o instrucción de texto escrita que le das a una Inteligencia Artificial para realizar una tarea específica.</p>
+
+                </div>
+
+
+
+                <div class="glossary-card bg-slate-950 p-4 rounded-xl border border-slate-800/80 space-y-1">
+
+                    <span class="text-xs font-bold text-amber-400 block">Reclutador Senior</span>
+
+                    <p class="text-xs text-slate-400">Profesional experto en gestión de Recursos Humanos enfocado en la evaluación y contratación de talento clave.</p>
+
+                </div>
+
+
+
+                <div class="glossary-card bg-slate-950 p-4 rounded-xl border border-slate-800/80 space-y-1">
+
+                    <span class="text-xs font-bold text-rose-400 block">Inteligencia Artificial (IA)</span>
+
+                    <p class="text-xs text-slate-400">Herramientas conversacionales avanzadas (ChatGPT, Gemini, Claude) utilizadas para acelerar la optimización de documentos.</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- Footer -->
+
+    <footer class="glass-card border-t border-slate-800/80 py-8 px-4 text-center text-xs text-slate-500 mt-16">
+
+        <div class="max-w-7xl mx-auto space-y-3">
+
+            <p><strong>Cómo Transformar tu CV en Invencible con IA by Rubén Sbarsky</strong></p>
+
+            <p>Guía de optimización basada estrictamente en el método de Inteligencia Artificial para Currículums y Entrevistas.</p>
+
+            <p class="text-slate-600">Diseñado con HTML5 & Tailwind CSS — Todo en un solo archivo independiente.</p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+
+    <script>
+
+        // Copy Single Prompt Function
+
+        function copyPrompt(elementId, btnElement) {
+
+            const promptText = document.getElementById(elementId).innerText.trim();
+
+            executeCopy(promptText, btnElement, 'Prompt copiado al portapapeles');
+
+        }
+
+
+
+        // Copy All Prompts
+
+        function copyAllPrompts() {
+
+            const p1 = document.getElementById('prompt1').innerText.trim();
+
+            const p2 = document.getElementById('prompt2').innerText.trim();
+
+            const p3 = document.getElementById('prompt3').innerText.trim();
+
+            const p4 = document.getElementById('prompt4').innerText.trim();
+
+
+
+            const combined = `--- PROMPT 1: DIAGNÓSTICO ---
+
+${p1}
+
+
+
+--- PROMPT 2: FÓRMULA XYZ ---
+
+${p2}
+
+
+
+--- PROMPT 3: EVALUACIÓN ATS ---
+
+${p3}
+
+
+
+--- PROMPT 4: ENSAYO ENTREVISTA ---
+
+${p4}`;
+
+
+
+            executeCopy(combined, null, '¡Los 4 Prompts copiados con éxito!');
+
+        }
+
+
+
+        // Generic Copy Command logic
+
+        function executeCopy(text, btnElement, successMsg) {
+
+            const textarea = document.createElement('textarea');
+
+            textarea.value = text;
+
+            textarea.style.position = 'fixed';
+
+            textarea.style.opacity = '0';
+
+            document.body.appendChild(textarea);
+
+            textarea.select();
+
+            
+
+            try {
+
+                document.execCommand('copy');
+
+                showToast(successMsg);
+
+                if (btnElement) {
+
+                    const originalHTML = btnElement.innerHTML;
+
+                    btnElement.innerHTML = '<i class="fa-solid fa-check mr-1"></i> ¡Copiado!';
+
+                    btnElement.classList.add('bg-green-600');
+
+                    setTimeout(() => {
+
+                        btnElement.innerHTML = originalHTML;
+
+                        btnElement.classList.remove('bg-green-600');
+
+                    }, 2000);
+
+                }
+
+            } catch (err) {
+
+                showToast('Error al copiar. Copia manualmente.');
+
+            } finally {
+
+                document.body.removeChild(textarea);
+
+            }
+
+        }
+
+
+
+        // Toast Notification Trigger
+
+        function showToast(message) {
+
+            const toast = document.getElementById('toast');
+
+            const toastMsg = document.getElementById('toast-message');
+
+            toastMsg.innerText = message;
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            
+
+            setTimeout(() => {
+
+                toast.classList.remove('translate-y-0', 'opacity-100');
+
+                toast.classList.add('translate-y-20', 'opacity-0');
+
+            }, 3000);
+
+        }
+
+
+
+        // XYZ Example Switcher
+
+        function switchXYZ(type) {
+
+            const tabs = document.querySelectorAll('.xyz-tab');
+
+            tabs.forEach(tab => {
+
+                tab.classList.remove('bg-purple-600', 'text-white');
+
+                tab.classList.add('bg-slate-800', 'text-slate-400');
+
+            });
+
+
+
+            const activeBtn = document.getElementById('btn-' + type);
+
+            activeBtn.classList.remove('bg-slate-800', 'text-slate-400');
+
+            activeBtn.classList.add('bg-purple-600', 'text-white');
+
+
+
+            document.getElementById('xyz-content-cotidiano').classList.add('hidden');
+
+            document.getElementById('xyz-content-ventas').classList.add('hidden');
+
+            document.getElementById('xyz-content-camarero').classList.add('hidden');
+
+
+
+            document.getElementById('xyz-content-' + type).classList.remove('hidden');
+
+        }
+
+
+
+        // Toggle Exercise Solutions
+
+        function toggleSolution(id) {
+
+            const sol = document.getElementById(id);
+
+            const icon = document.getElementById(id + '-icon');
+
+            if (sol.classList.contains('hidden')) {
+
+                sol.classList.remove('hidden');
+
+                icon.classList.remove('fa-chevron-down');
+
+                icon.classList.add('fa-chevron-up');
+
+            } else {
+
+                sol.classList.add('hidden');
+
+                icon.classList.remove('fa-chevron-up');
+
+                icon.classList.add('fa-chevron-down');
+
+            }
+
+        }
+
+
+
+        // Filter Glossary Items
+
+        function filterGlossary() {
+
+            const query = document.getElementById('glossary-search').value.toLowerCase();
+
+            const cards = document.querySelectorAll('.glossary-card');
+
+
+
+            cards.forEach(card => {
+
+                const text = card.innerText.toLowerCase();
+
+                if (text.includes(query)) {
+
+                    card.style.display = 'block';
+
+                } else {
+
+                    card.style.display = 'none';
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
